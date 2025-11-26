@@ -3,6 +3,8 @@ title: "Descifrando el Front-End"
 
 description: "La base de la web: Roles, estático vs. dinámico, y el poder fundamental de HTML"
 week: 1
+module: 2
+numberClass: 1
 date: 06-11-2025
 difficulty: "beginner"
 duration: "5 days"
@@ -46,19 +48,6 @@ Es crucial distinguir el tipo de sitio que se está creando:
   - Utiliza **servidores y bases de datos** para gestionar la información y responder en tiempo real.
 
 ---
-
-## 🧱 El Corazón del Front-End: HTML
-
-**HTML (HyperText Markup Language)** es el lenguaje fundamental que da **estructura** a la web. Es la base sobre la que se construye cualquier página web.
-
-| Elemento HTML Clave               | Función - Propósito |                                                                    |
-| :-------------------------------- | :------------------ | :----------------------------------------------------------------- |
-| **Párrafos, Encabezados, Listas** |                     | Estructurar el **contenido** de la web.                            |
-| **Enlaces**                       | `html <a></a>`      | Permitir la **navegación** entre páginas.                          |
-| **Imágenes**                      | `html <IMG>`        | Insertar **medios visuales**.                                      |
-| **Formularios**                   | **Formularios**     | Manejar la **interacción y envío de datos** por parte del usuario. |
-| **`<HEAD>`**                      | **`<HEAD>`**        | Contiene **metadatos** (título, enlaces a CSS/scripts).            |
-| **`<BODY>`**                      | **`<BODY>`**        | Contiene el **contenido visible** de la página.                    |
 
 ## 🧱 El Corazón del Front-End: HTML
 

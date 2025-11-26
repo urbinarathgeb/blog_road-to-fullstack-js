@@ -1,19 +1,21 @@
-import { defineCollection, z } from "astro:content"
+import { defineCollection, z } from "astro:content";
 
 const classesCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    week: z.number(),
     date: z.coerce.date(),
-    difficulty: z.enum(["beginner", "intermediate", "advanced"]),
-    duration: z.string(),
-    instructor: z.string(),
+    module: z.number(),
+    numberClass: z.number(),
     topics: z.array(z.string()),
+    week: z.number(), // borrar
+    difficulty: z.enum(["beginner", "intermediate", "advanced"]), // borrar
+    duration: z.string(), // borrar
+    instructor: z.string(), // borrar
   }),
-})
+});
 
 export const collections = {
   classes: classesCollection,
-}
+};

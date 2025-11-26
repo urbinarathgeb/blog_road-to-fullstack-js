@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type ClassEntry = CollectionEntry<"classes">;
 
 const classes = (await getCollection("classes")).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -9,42 +11,51 @@ const classes = (await getCollection("classes")).sort(
 
 <Layout title="Classes" description="All bootcamp classes and documentation">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-5xl font-bold mb-12 glitch" data-text="ALL CLASSES">
-      ALL CLASSES
+    <h1 class="text-5xl font-bold mb-12 glitch" data-text="TODAS LAS CLASES">
+      TODAS LAS CLASES
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        classes.map((classItem) => (
-          <a href={`/classes/${classItem.slug}`} class="group">
-            <div class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full hover:shadow-neon-pink-lg">
-              <div class="mb-4 flex items-start justify-between">
-                <h2 class="text-2xl font-bold group-hover:text-cyber-pink-light transition-colors flex-1">
-                  {classItem.data.title}
-                </h2>
-                <span class="text-xs px-2 py-1 bg-cyber-pink text-cyber-black rounded font-bold ml-2 whitespace-nowrap">
-                  Week {classItem.data.week}
-                </span>
-              </div>
-              <p class="text-cyber-pink-light mb-4">
-                {classItem.data.description}
-              </p>
-              <div class="mb-4">
-                <p class="text-sm text-gray-400 mb-3">Topics:</p>
-                <div class="flex gap-2 flex-wrap">
-                  {classItem.data.topics.map((topic: string) => (
-                    <span class="text-xs px-2 py-1 bg-cyber-black-light border border-cyber-pink rounded font-mono text-cyber-pink-light">
-                      {topic}
+        classes.map((classItem: ClassEntry) => {
+          const { slug } = classItem;
+          const { title, description, module, numberClass, topics, date } =
+            classItem.data;
+
+          return (
+            <a href={`/classes/${slug}`} class="group">
+              <div class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full hover:shadow-neon-pink-lg">
+                <div class="mb-4 flex items-start justify-between">
+                  <h2 class="text-2xl font-bold group-hover:text-cyber-pink-light transition-colors flex-1">
+                    {title}
+                  </h2>
+                  <div class="flex flex-col items-center gap-2">
+                    <span class="text-xs px-2 py-1 bg-cyber-pink text-cyber-black rounded font-bold ml-2 whitespace-nowrap w-20 text-center">
+                      Módulo {module}
                     </span>
-                  ))}
+                    <span class="text-xs px-2 py-1 bg-cyber-pink text-cyber-black rounded font-bold ml-2 whitespace-nowrap w-20 text-center">
+                      Clase {numberClass}
+                    </span>
+                  </div>
                 </div>
+                <p class="text-cyber-pink-light mb-4">{description}</p>
+                <div class="mb-4">
+                  <p class="text-sm text-gray-400 mb-3">Temas:</p>
+                  <div class="flex gap-2 flex-wrap">
+                    {topics.map((topic: string) => (
+                      <span class="text-xs px-2 py-1 bg-cyber-black-light border border-cyber-pink rounded font-mono text-cyber-pink-light">
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  📅 {new Date(date).toLocaleDateString()}
+                </p>
               </div>
-              <p class="text-xs text-gray-500">
-                📅 {new Date(classItem.data.date).toLocaleDateString()}
-              </p>
-            </div>
-          </a>
-        ))
+            </a>
+          );
+        })
       }
     </div>
   </div>
