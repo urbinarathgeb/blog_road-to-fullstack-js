@@ -1,6 +1,5 @@
 ---
 title: "Descifrando el Front-End"
-
 description: "La base de la web: Roles, estático vs. dinámico, y el poder fundamental de HTML"
 week: 1
 module: 2
