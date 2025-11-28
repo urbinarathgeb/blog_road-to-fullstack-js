@@ -12,13 +12,11 @@ export async function getStaticPaths() {
 
 const { classItem } = Astro.props;
 const { Content } = await classItem.render();
+const { slug } = classItem;
+const { title, description, date } = classItem.data;
 ---
 
-<ClassLayout
-  title={classItem.data.title}
-  description={classItem.data.description}
-  date={classItem.data.date}
->
+<ClassLayout title={title} description={description} date={date}>
   <!-- <div class="mb-8 p-6 bg-cyber-black-light rounded neon-border">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div>
@@ -51,7 +49,7 @@ const { Content } = await classItem.render();
     )
   } -->
 
-  <div class="flex flex-wrap gap-4 mb-6">
+  <div class="flex flex-wrap gap-4 mb-6" transition:name={`card-${slug}`}>
     {
       classItem.data.topics.map((topic: string) => (
         <span class="px-3 py-2 topic">{topic}</span>

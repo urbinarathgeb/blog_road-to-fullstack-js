@@ -1,10 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-const { title, description, date, author } = Astro.props;
+const { title, description, date, author, slug } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <article
+    class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+    transition:name=`card-${slug}`
+  >
     <div class="mb-8">
       <h1 class="text-5xl font-bold mb-4 glitch" data-text={title}>
         {title}
