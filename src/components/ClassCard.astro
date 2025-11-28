@@ -1,0 +1,50 @@
+---
+const { title, module, numberClass, description, topics, date, slug } =
+  Astro.props;
+---
+
+<div
+  class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full hover:shadow-neon-pink-lg"
+>
+  <div class="mb-4 flex items-start justify-between">
+    <h2
+      class="text-2xl font-bold group-hover:text-cyber-pink-light transition-colors flex-1"
+    >
+      {title}
+    </h2>
+    <div class="flex flex-col items-center gap-2">
+      {
+        module && (
+          <span class="text-xs px-2 py-1 bg-cyber-pink text-cyber-black rounded font-bold ml-2 whitespace-nowrap w-20 text-center">
+            Módulo {module}
+          </span>
+        )
+      }
+      {
+        numberClass && (
+          <span class="text-xs px-2 py-1 bg-cyber-pink text-cyber-black rounded font-bold ml-2 whitespace-nowrap w-20 text-center">
+            Clase {numberClass}
+          </span>
+        )
+      }
+    </div>
+  </div>
+  <p class="text-cyber-pink-light mb-4">{description}</p>
+  <div class="mb-4">
+    <p class="text-sm text-gray-400 mb-3">Temas:</p>
+    <div class="flex gap-2 flex-wrap">
+      {
+        topics.map((topic: string) => (
+          <span class="text-xs px-2 py-1 topic">{topic}</span>
+        ))
+      }
+    </div>
+  </div>
+  {
+    date && (
+      <p class="text-xs text-gray-500">
+        📅 {new Date(date).toLocaleDateString()}
+      </p>
+    )
+  }
+</div>

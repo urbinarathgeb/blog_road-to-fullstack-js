@@ -11,29 +11,28 @@ instructor: "Cyber Sensei"
 topics: ["Front-end", "HTML", "Estructura web"]
 ---
 
----
-
 ## 🚀 Fundamentos de Desarrollo Front-End: La Base de la Web Moderna
 
 ¡Bienvenidos a mi resumen de la primera clase de Fundamentos de Desarrollo Front-End! Esta sesión nos dio una visión esencial sobre el mundo del desarrollo web, diferenciando los roles clave y profundizando en la tecnología fundamental: **HTML**.
-
----
 
 ## 🗺️ El Panorama del Desarrollo Web
 
 El desarrollo web es un campo dinámico que abarca la creación de sitios y aplicaciones accesibles por internet. Se divide en tres disciplinas principales:
 
-- **Front-End:** Se centra en la **experiencia del usuario (UX)**, el diseño visual, y la estructura de la página. Es lo que el usuario ve y con lo que interactúa.
-  - **Tecnologías Clave:** HTML, CSS, y JavaScript.
-- **Back-End:** Se encarga de la **lógica del servidor**, la gestión de la base de datos, y la comunicación con el cliente. Es la funcionalidad interna del sitio.
-  - **Tecnologías Clave:** Lenguajes de programación (Python, PHP, Java, C#, Node.js), Bases de Datos (SQL, NoSQL), y Servidores (Apache, Nginx, Node.js).
+### Front-End
+
+- Se centra en la **experiencia del usuario (UX)**, el diseño visual, y la estructura de la página. Es lo que el usuario ve y con lo que interactúa.
+- **Tecnologías Clave:** HTML, CSS, y JavaScript.
+
+  ### Back-End
+
+- Se encarga de la **lógica del servidor**, la gestión de la base de datos, y la comunicación con el cliente. Es la funcionalidad interna del sitio.
+- **Tecnologías Clave:** Lenguajes de programación (Python, PHP, Java, C#, Node.js), Bases de Datos (SQL, NoSQL), y Servidores (Apache, Nginx, Node.js).
 - **Full-Stack:** Un desarrollador capaz de trabajar en **ambas capas** (Front-End y Back-End), dominando todas las capas de la aplicación.
 
 ## 💡 Dato Esencial para Nunca Olvidar
 
 El **Front-End es la cara, y el Back-End es el cerebro**. Un desarrollador Full-Stack es un "maestro de ambos mundos".
-
----
 
 ## 🌐 Desarrollo Web Estático vs. Dinámico
 
@@ -45,8 +44,6 @@ Es crucial distinguir el tipo de sitio que se está creando:
 - **Desarrollo Web Dinámico:**
   - Permite la **personalización del contenido** y la interacción del usuario.
   - Utiliza **servidores y bases de datos** para gestionar la información y responder en tiempo real.
-
----
 
 ## 🧱 El Corazón del Front-End: HTML
 
@@ -114,8 +111,6 @@ Estos son los elementos básicos para estructurar el contenido:
 
 El dominio de **HTML es esencial**. Aunque solo define la estructura, no el diseño ni la interactividad, es la base sobre la que se construye cualquier página web.
 
----
-
 ## 💻 El Navegador Web: El Intérprete
 
 El navegador es nuestra "puerta de entrada" al mundo digital. Su función principal es actuar como **intermediario** entre el usuario y el servidor web.
@@ -135,8 +130,6 @@ El navegador también tiene capacidades de almacenamiento local de datos:
 - **Cookies:** Pequeños archivos de texto para recordar preferencias, mantener sesiones o rastrear comportamiento.
 - **Almacenamiento Local:** Guarda datos de usuario que persisten **después de cerrar la sesión** (ideal para la configuración personalizada).
 - **Almacenamiento de Sesión:** Guarda datos que se **eliminan al cerrar el navegador** (se utiliza para información temporal como el carrito de compras).
-
----
 
 ## 💡 Tips y Sugerencias a Tomar en Cuenta
 

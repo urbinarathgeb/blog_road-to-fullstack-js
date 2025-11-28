@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import ClassCard from "@/components/ClassCard.astro";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 
@@ -47,7 +48,7 @@ type ClassEntry = CollectionEntry<"classes">;
         {
           classes.slice(0, 3).map((classItem: ClassEntry) => (
             <a href={`/classes/${classItem.slug}`} class="group">
-              <article class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full">
+              {/* <article class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full">
                 <h3 class="text-2xl font-bold mb-3 group-hover:text-cyber-pink-light transition-colors">
                   {classItem.data.title}
                 </h3>
@@ -61,7 +62,13 @@ type ClassEntry = CollectionEntry<"classes">;
                     </span>
                   ))}
                 </div>
-              </article>
+              </article> */}
+              <ClassCard
+                title={classItem.data.title}
+                description={classItem.data.description}
+                topics={classItem.data.topics}
+                transition:name="card"
+              />
             </a>
           ))
         }

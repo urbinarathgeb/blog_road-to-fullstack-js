@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import ClassCard from "@/components/ClassCard.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 type ClassEntry = CollectionEntry<"classes">;
@@ -27,7 +28,7 @@ const classes = (await getCollection("classes")).sort(
 
           return (
             <a href={`/classes/${slug}`} class="group">
-              <div class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full hover:shadow-neon-pink-lg">
+              {/* <div class="neon-border p-6 rounded bg-cyber-black hover:bg-cyber-black-light transition-all duration-300 h-full hover:shadow-neon-pink-lg">
                 <div class="mb-4 flex items-start justify-between">
                   <h2 class="text-2xl font-bold group-hover:text-cyber-pink-light transition-colors flex-1">
                     {title}
@@ -46,16 +47,23 @@ const classes = (await getCollection("classes")).sort(
                   <p class="text-sm text-gray-400 mb-3">Temas:</p>
                   <div class="flex gap-2 flex-wrap">
                     {topics.map((topic: string) => (
-                      <span class="text-xs px-2 py-1 bg-cyber-black-light border border-cyber-pink rounded font-mono text-cyber-pink-light">
-                        {topic}
-                      </span>
+                      <span class="text-xs px-2 py-1 topic">{topic}</span>
                     ))}
                   </div>
                 </div>
                 <p class="text-xs text-gray-500">
                   📅 {new Date(date).toLocaleDateString()}
                 </p>
-              </div>
+              </div> */}
+              <ClassCard
+                title={title}
+                module={module}
+                numberClass={numberClass}
+                description={description}
+                topics={topics}
+                date={date}
+                transition:name="card"
+              />
             </a>
           );
         })

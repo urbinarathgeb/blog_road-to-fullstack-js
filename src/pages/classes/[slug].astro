@@ -51,12 +51,10 @@ const { Content } = await classItem.render();
     )
   } -->
 
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-4 mb-6">
     {
       classItem.data.topics.map((topic: string) => (
-        <span class="px-3 py-2 bg-cyber-pink text-cyber-black rounded font-bold">
-          {topic}
-        </span>
+        <span class="px-3 py-2 topic">{topic}</span>
       ))
     }
   </div>

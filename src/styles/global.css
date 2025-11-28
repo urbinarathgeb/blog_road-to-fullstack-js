@@ -207,6 +207,10 @@
     }
   }
 
+  .topic {
+    @apply bg-cyber-black-light border border-cyber-pink rounded font-mono text-cyber-pink-light;
+  }
+
   .neon-border {
     @apply border-2 border-cyber-pink shadow-lg;
     box-shadow: 0 0 10px rgba(255, 0, 110, 0.5),
@@ -236,11 +240,14 @@
 .prose h2,
 .prose h3,
 .prose h4 {
-  @apply text-cyber-pink-light mt-6 mb-3;
+  @apply text-cyber-pink-light mt-16 mb-3;
 }
 
+.prose h2 {
+  @apply text-2xl font-semibold;
+}
 .prose p {
-  @apply mb-4 leading-relaxed;
+  @apply mb-6 leading-relaxed;
 }
 
 .prose code {
@@ -253,12 +260,11 @@
 }
 
 .prose pre {
-  background: #282a36;
-  color: #f8f8f2;
   border-radius: 0.5rem;
   border: 1px solid #44475a;
   padding: 1rem;
   overflow-x: auto;
+  margin: 1rem 0;
 }
 
 .prose pre code {
@@ -274,7 +280,7 @@
 }
 
 .prose li {
-  @apply mb-2;
+  @apply mb-4;
 }
 
 .prose table {
